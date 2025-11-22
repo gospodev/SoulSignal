@@ -1,0 +1,25 @@
+# === Node dependencies ===
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# === Environment variables ===
+.env
+
+# === VS Code ===
+.vscode/
+
+# === MacOS system files ===
+.DS_Store
+
+# === Logs ===
+logs/
+*.log
+
+# === Build artifacts (за бъдеще) ===
+dist/
+build/
+
+# === Temporary files ===
+tmp/
+*.tmp

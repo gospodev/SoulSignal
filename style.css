@@ -1,0 +1,329 @@
+:root {
+    --bg: #050711;
+    --bg-alt: #0d101c;
+    --card: #151827;
+    --accent: #7ef2c9;
+    --accent-soft: rgba(126, 242, 201, 0.14);
+    --text: #f5f7ff;
+    --muted: #a0a4c0;
+    --border: #252842;
+    --danger: #ff6b81;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.4);
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+      "Segoe UI", sans-serif;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #141728 0, #050711 55%);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* HEADER & BRAND */
+  
+  .ss-header {
+    padding: 16px 6vw 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: radial-gradient(circle at top left, #181b36 0, #050711 55%);
+  }
+  
+  .ss-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .ss-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(126, 242, 201, 0.7);
+    box-shadow: 0 0 24px rgba(126, 242, 201, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    animation: logoPulse 4s ease-in-out infinite;
+  }
+  
+  @keyframes logoPulse {
+    0% {
+      box-shadow: 0 0 10px rgba(126, 242, 201, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 26px rgba(126, 242, 201, 0.9);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(126, 242, 201, 0.4);
+    }
+  }
+  
+  .ss-header h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
+  .ss-subtitle {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  
+  /* LAYOUT */
+  
+  .ss-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px 6vw 40px;
+  }
+  
+  @media (max-width: 900px) {
+    .ss-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* SIDEBAR */
+  
+  .ss-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .ss-panel {
+    background: linear-gradient(145deg, #141828, #090b14);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    padding: 14px 16px 16px;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .ss-panel h2,
+  .ss-panel h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+  
+  .ss-panel p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  
+  /* CHIPS / FILTER BUTTONS */
+  
+  .ss-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .chip {
+    border: 1px solid var(--border);
+    background: rgba(10, 12, 24, 0.9);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.18s ease-out;
+  }
+  
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  
+  .chip-active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: rgba(126, 242, 201, 0.7);
+  }
+  
+  /* ETHICAL FILTER TOGGLE */
+  
+  .ss-toggle {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  
+  .ss-toggle input {
+    transform: scale(1.1);
+  }
+  
+  .ss-hint {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  
+  /* SIGNALS SECTION */
+  
+  .ss-signals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .ss-signals-header h2 {
+    margin: 0 0 4px;
+  }
+  
+  #signals-summary {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  
+  .ss-signals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  
+  /* SIGNAL CARD */
+  
+  .ss-card {
+    background: linear-gradient(150deg, #191c2f, #0f1120);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 12px 13px 13px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: cardIn 0.26s ease-out forwards;
+  }
+  
+  @keyframes cardIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .ss-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .ss-card-title {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .ss-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  /* ETHICS BADGES */
+  
+  .badge-ethics-a {
+    border-color: rgba(126, 242, 201, 0.7);
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  
+  .badge-ethics-b {
+    border-color: rgba(187, 221, 153, 0.7);
+    color: #d5f7a2;
+    background: rgba(187, 221, 153, 0.16);
+  }
+  
+  .badge-ethics-c {
+    border-color: rgba(255, 204, 120, 0.7);
+    color: #ffe2a3;
+    background: rgba(255, 204, 120, 0.16);
+  }
+  
+  /* MYSTICA SPECIAL ACCENT (можем да ползваме клас по-късно) */
+  
+  .badge-mystica {
+    border-color: rgba(196, 169, 255, 0.85);
+    color: #e4d4ff;
+    background: rgba(196, 169, 255, 0.18);
+  }
+  
+  /* META INFO */
+  
+  .ss-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  
+  .ss-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* SUMMARY, TAGS, COMMENT */
+  
+  .ss-summary {
+    font-size: 13px;
+    color: #e1e4ff;
+  }
+  
+  .ss-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+  }
+  
+  .ss-tag {
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--muted);
+  }
+  
+  .ss-comment {
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+  
+  /* FOOTER */
+  
+  .ss-footer {
+    padding: 10px 6vw 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+  }
+  

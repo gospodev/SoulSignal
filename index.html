@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Project</title>
+  <meta charset="UTF-8" />
+  <title>SoulSignal – powered by Lumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to the HTML Project</h1>
-    <p>This is the main page of the web application.</p>
+  <header class="ss-header">
+    <div class="ss-brand">
+      <div class="ss-logo">◎</div>
+      <div>
+        <h1>SoulSignal</h1>
+        <p class="ss-subtitle">Ethical, calm & conscious signals – powered by Lumar</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="ss-layout">
+    <aside class="ss-sidebar">
+      <section class="ss-panel">
+        <h2>👋 Lumar</h2>
+        <p id="lumar-greeting">
+          Hello, Manee. I've selected meaningful signals for you – aligned with ethics,
+          sustainability and human-centered values. Ready to dive in?
+        </p>
+      </section>
+
+      <section class="ss-panel">
+        <h3>Streams</h3>
+        <div class="ss-chips" id="category-filters">
+          <button class="chip chip-active" data-category="all">All</button>
+          <button class="chip" data-category="news">News</button>
+          <button class="chip" data-category="climate">Climate</button>
+          <button class="chip" data-category="ethics">Ethical Investing</button>
+          <button class="chip" data-category="culture">Culture</button>
+          <button class="chip" data-category="tech">Technology</button>
+          <button class="chip" data-category="mystica">Mystica</button>
+
+        </div>
+      </section>
+
+      <section class="ss-panel">
+        <h3>Ethical Filter</h3>
+        <label class="ss-toggle">
+          <input type="checkbox" id="high-ethics-toggle" checked />
+          <span>Show only high-ethics signals (A–B)</span>
+        </label>
+        <p class="ss-hint">
+          Automatically hides content involving weapons, tobacco, disinformation,
+          harmful finance and destructive industries.
+        </p>
+      </section>
+    </aside>
+
+    <section class="ss-signals">
+      <div class="ss-signals-header">
+        <h2>Selected Signals</h2>
+        <p id="signals-summary"></p>
+      </div>
+      <div id="signals-container" class="ss-signals-grid"></div>
+    </section>
+  </main>
+
+  <footer class="ss-footer">
+    <small>SoulSignal – MVP Prototype • Created by Manny & Lumar</small>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
